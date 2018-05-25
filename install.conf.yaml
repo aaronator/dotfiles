@@ -1,0 +1,20 @@
+# https://github.com/anishathalye/dotbot/tree/c29ba8d72224b545cbd7cf9446c3ed2ef13f8c24#configuration
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.tmux.conf:
+      force: true
+      path: .tmux.conf
+    ~/.vimrc:
+      force: true
+      path: .vimrc
+    ~/.zshrc:
+      force: true
+      path: .zshrc
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
