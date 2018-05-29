@@ -6,6 +6,8 @@
 - clean: ['~']
 
 - link:
+    ~/.iterm2:
+      path: .iterm2
     ~/.tmux.conf:
       force: true
       path: .tmux.conf
