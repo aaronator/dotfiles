@@ -4,6 +4,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
 Plug 'edkolev/tmuxline.vim'
+Plug 'ervandew/supertab'
 call plug#end()
 
 " vim-solarized8
