@@ -3,6 +3,13 @@ source "${HOME}/.zgen/zgen.zsh"
 zgen load chrissicool/zsh-256color
 zgen load zsh-users/zsh-syntax-highlighting
 zgen load zsh-users/zsh-autosuggestions
+zgen load subnixr/minimal
+
+MNML_OK_COLOR=9
+MNML_USER_CHAR="❯"
+MNML_INSERT_CHAR=""
+MNML_INFOLN=()
+MNML_MAGICENTER=(mnml_me_git)
 
 # Source colors for ls
 LS_COLORS=…
