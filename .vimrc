@@ -5,6 +5,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
 Plug 'edkolev/tmuxline.vim'
 Plug 'ervandew/supertab'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 " vim-solarized8
@@ -28,6 +29,8 @@ map <C-n> :NERDTreeToggle<CR>
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd VimEnter * if argc() == 1 && !exists("s:std_in") && filereadable(argv()[0]) | NERDTree | wincmd p | endif
+" vim-gitgutter
+set updatetime=100
 
 " Other settings
 set number " enable line numbers in gutter
