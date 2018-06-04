@@ -217,9 +217,9 @@ call s:h("Function", { "fg": s:yellow })
 call s:h("Statement", { "fg": s:red })
 call s:h("Conditional", { "fg": s:purple })
 hi Repeat          ctermfg=none    ctermbg=none    cterm=none
-hi Label           ctermfg=none    ctermbg=none    cterm=none
+call s:h("Label", { "fg": s:purple })
 hi Operator        ctermfg=none    ctermbg=none    cterm=none
-hi Keyword         ctermfg=none    ctermbg=none    cterm=none
+call s:h("Keyword", { "fg": s:purple })
 hi Exception       ctermfg=none    ctermbg=none    cterm=none
 call s:h("Comment", { "fg": s:comment_grey })
 
@@ -272,6 +272,22 @@ hi SpellRare       ctermfg=none    ctermbg=none    cterm=none
 "--------------------------------------------------------------------
 " Specific settings                                                 |
 "--------------------------------------------------------------------
+call s:h("cssAttr", { "fg": s:yellow })
+call s:h("cssAttrRegion", { "fg": s:yellow })
+call s:h("cssColor", { "fg": s:blue })
+call s:h("cssValueNumber", { "fg": s:yellow })
+call s:h("cssProp", { "fg": s:blue })
+call s:h("cssBraces", { "fg": s:purple })
+call s:h("cssClassName", { "fg": s:purple })
+
+call s:h("htmlTag", { "fg": s:red })
+call s:h("htmlEndTag", { "fg": s:red })
+
+call s:h("javaScriptBraces", { "fg": s:purple })
+call s:h("javaScriptReserved", { "fg": s:purple })
+
+call s:h("jsonKeyword", { "fg": s:blue })
+call s:h("jsonString", { "fg": s:red })
 
 call s:h("GitGutterAdd", { "fg": s:green })
 call s:h("GitGutterChange", { "fg": s:yellow })
