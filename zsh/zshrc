@@ -28,9 +28,14 @@ fi
 alias ll="ls -Alh"
 alias odin="ssh -fNL 2009:localhost:2009 aarolamb.aka.corp.amazon.com"
 
+# Mosh
+alias ssh='mosh'
+
 # VIM
 alias vim='nvim'
 alias ivm='vim'
 alias vm='nvim'
 alias vi='nvim'
+
+export PATH=$HOME/.toolbox/bin:$PATH
 
