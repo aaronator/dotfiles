@@ -178,10 +178,10 @@ call s:h("NERDTreeLinkTarget", { "fg": s:white })
 call s:h("StatusLine", { "bg": s:status_grey, "fg": s:white })
 call s:h("StatusLineNC", { "bg": s:status_grey, "fg": s:med_grey })
 hi WildMenu        ctermfg=none    ctermbg=none    cterm=none
-hi Question        ctermfg=none    ctermbg=none    cterm=none
+call s:h("Question", { "fg": s:green })
 call s:h("Title", { "fg": s:red })
 hi ModeMsg         ctermfg=none    ctermbg=none    cterm=none
-hi MoreMsg         ctermfg=none    ctermbg=none    cterm=none
+call s:h("MoreMsg", { "fg": s:green })
 
 " --------------
 " - Visual aid -
@@ -190,11 +190,11 @@ hi MatchParen      ctermfg=none    ctermbg=none    cterm=none
 hi Visual          ctermfg=none    ctermbg=none    cterm=none
 hi VisualNOS       ctermfg=none    ctermbg=none    cterm=none
 call s:h("NonText", { "fg": s:gutter_fg_grey })
-hi Todo            ctermfg=none    ctermbg=none    cterm=none
+call s:h("Todo", { "bg": s:yellow, "fg": s:black })
 hi Underlined      ctermfg=none    ctermbg=none    cterm=none
-hi Error           ctermfg=none    ctermbg=none    cterm=none
-hi ErrorMsg        ctermfg=none    ctermbg=none    cterm=none
-hi WarningMsg      ctermfg=none    ctermbg=none    cterm=none
+call s:h("Error", { "bg": s:red, "fg": s:white })
+call s:h("ErrorMsg", { "bg": s:red, "fg": s:white })
+call s:h("WarningMsg", { "fg": s:red })
 hi Ignore          ctermfg=none    ctermbg=none    cterm=none
 hi SpecialKey      ctermfg=none    ctermbg=none    cterm=none
 
