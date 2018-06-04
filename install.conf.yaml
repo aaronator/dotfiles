@@ -12,6 +12,7 @@
       relink: true
     ~/.iterm2: iterm2/
     ~/.tmux.conf: tmux/tmux.conf
+    ~/.tmuxline.conf: tmux/tmuxline.conf
     ~/.vim:
       path: vim/
       relink: true
