@@ -23,12 +23,9 @@ fi
 
 alias ll="ls -Alh"
 
-# Mosh
-alias ssh="mosh"
-
 # VIM
-alias vim='nvim'
-alias ivm='vim'
-alias vm='nvim'
-alias vi='nvim'
+#alias vim='nvim'
+#alias ivm='vim'
+#alias vm='nvim'
+#alias vi='nvim'
 

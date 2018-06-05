@@ -6,7 +6,9 @@ Plug 'scrooloose/nerdtree'
 Plug 'edkolev/tmuxline.vim'
 Plug 'ervandew/supertab'
 Plug 'airblade/vim-gitgutter'
-Plug 'vim-scripts/SyntaxAttr.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+"Plug 'vim-scripts/SyntaxAttr.vim'
 call plug#end()
 
 " vim-solarized8
@@ -47,6 +49,7 @@ set backspace=2 " backspace over everything in insert mode (indent,eol,start)
 filetype on
 filetype plugin indent on
 
+" Keep these around while modifying our vim colorscheme
 "function! SyntaxItem()
 "  return synIDattr(synID(line("."),col("."),1),"name")
 "endfunction
