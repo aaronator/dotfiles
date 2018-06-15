@@ -143,9 +143,9 @@ call s:h("LineNr", { "fg": s:gutter_fg_grey })
 " - Number column -
 " -----------------
 hi CursorColumn    ctermfg=none    ctermbg=none    cterm=none
-hi FoldColumn      ctermfg=none    ctermbg=none    cterm=none
-hi SignColumn      ctermfg=none    ctermbg=none    cterm=none
-hi Folded          ctermfg=none    ctermbg=none    cterm=none
+call s:h("Folded", { "fg": s:blue })
+call s:h("FoldColumn", {})
+"call s:h("SignColumn", {})
 
 " -------------------------
 " - Window/Tab delimiters -

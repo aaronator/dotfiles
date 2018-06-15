@@ -34,23 +34,53 @@ autocmd VimEnter * if argc() == 1 && !exists("s:std_in") && filereadable(argv()[
 " vim-gitgutter
 set updatetime=100
 
+" Folding
+set foldenable
+set foldcolumn=0
+set foldlevel=20
+set foldmethod=syntax
+
+" Keybinds
+nnoremap <space> za
+nnoremap <expr> <C-space> foldclosed('.') != -1 ? 'zO' : 'zc'
+
 " Spacing
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
 set smarttab
+filetype plugin on
+filetype indent on
 
 " Other settings
+set ruler
+set so=7 " add 7 lines of vertical buffer to the cursor when navigating up/down
 set number " enable line numbers in gutter
 set cursorline
 set backspace=2 " backspace over everything in insert mode (indent,eol,start)
 
-filetype on
-filetype plugin indent on
+set wildmenu
+set lazyredraw
+
+set autoread
+
+set incsearch
+set hlsearch
+
+set modifiable
+
+set hid " need to check this out more
+set magic
+
+set noerrorbells
+set novisualbell
+set t_vb=
+set tm=500
 
 " Keep these around while modifying our vim colorscheme
 "function! SyntaxItem()
 "  return synIDattr(synID(line("."),col("."),1),"name")
 "endfunction
 "set statusline+=%{SyntaxItem()}
+
