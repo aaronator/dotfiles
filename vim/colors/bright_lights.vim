@@ -92,6 +92,7 @@ let s:colors = {
       \ "white": get(s:overrides, "white", { "gui": "#CDD3DF", "cterm": "188", "cterm16": "7" }),
       \ "visual_black": get(s:overrides, "visual_black", { "gui": "NONE", "cterm": "NONE", "cterm16": "0" }),
       \ "comment_grey": get(s:overrides, "comment_grey", { "gui": "#6B6B6B", "cterm": "59", "cterm16": "15" }),
+      \ "gutter_bg_grey": get(s:overrides, "gutter_bg_grey", { "gui": "#1A1A1A", "cterm": "16", "cterm16": "0" }),
       \ "gutter_fg_grey": get(s:overrides, "gutter_fg_grey", { "gui": "#4B4B4B", "cterm": "59", "cterm16": "15" }),
       \ "cursor_grey": get(s:overrides, "cursor_grey", { "gui": "#2C323C", "cterm": "236", "cterm16": "8" }),
       \ "visual_grey": get(s:overrides, "visual_grey", { "gui": "#3E4452", "cterm": "237", "cterm16": "15" }),
@@ -116,6 +117,7 @@ let s:white = s:colors.white
 let s:black = s:colors.black
 let s:visual_black = s:colors.visual_black " Black out selected text in 16-color visual mode
 let s:comment_grey = s:colors.comment_grey
+let s:gutter_bg_grey = s:colors.gutter_bg_grey
 let s:gutter_fg_grey = s:colors.gutter_fg_grey
 let s:cursor_grey = s:colors.cursor_grey
 let s:visual_grey = s:colors.visual_grey
@@ -137,7 +139,7 @@ call s:h("Normal", { "fg": s:white, "bg": s:black })
 call s:h("Cursor", {})
 call s:h("CursorLine", {})
 call s:h("CursorLineNr", { "fg": s:orange })
-call s:h("LineNr", { "fg": s:gutter_fg_grey })
+call s:h("LineNr", { 'bg': s:gutter_bg_grey, 'fg': s:gutter_fg_grey })
 
 " -----------------
 " - Number column -
@@ -167,7 +169,7 @@ call s:h("NERDTreeClosable", { "fg": s:blue })
 call s:h("NERDTreeOpenable", { "fg": s:menu_grey })
 call s:h("NERDTreeCWD", { "fg": s:purple })
 call s:h("NERDTreeDirSlash", { "fg": s:blue })
-call s:h("NERDTreeHelp", { "fg": s:green })
+call s:h("NERDTreeHelp", { "fg": s:comment_grey })
 call s:h("NERDTreeLinkDir", { "fg": s:purple })
 call s:h("NERDTreeLinkTarget", { "fg": s:white })
 call s:h("NERDTreeLinkTarget", { "fg": s:white })

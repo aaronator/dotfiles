@@ -3,7 +3,7 @@ Plug 'lifepillar/vim-solarized8'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
-Plug 'edkolev/tmuxline.vim'
+"Plug 'edkolev/tmuxline.vim'
 Plug 'ervandew/supertab'
 Plug 'airblade/vim-gitgutter'
 Plug 'pangloss/vim-javascript'
@@ -23,7 +23,7 @@ hi Normal guibg=NONE
 " vimw-airline
 let g:airline_powerline_fonts = 1
 " vim-airline-themes
-let g:airline_theme='bubblegum'
+let g:airline_theme='bright_lights'
 " nerdtree
 let NERDTreeHijackNetrw=1
 let NERDTreeShowHidden=1
