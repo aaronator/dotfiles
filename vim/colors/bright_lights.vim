@@ -2,7 +2,7 @@
 " Author: Gerardo Galindez <gerardo.galindez@gmail.com>
 " Maintainer: Gerardo Galindez <gerardo.galindez@gmail.com>
 " Notes: To check the meaning of the highlight groups, :help 'highlight'
-
+"
 set background=dark
 
 highlight clear
@@ -95,10 +95,7 @@ let s:colors = {
       \ "gutter_bg_grey": get(s:overrides, "gutter_bg_grey", { "gui": "#1A1A1A", "cterm": "16", "cterm16": "0" }),
       \ "gutter_fg_grey": get(s:overrides, "gutter_fg_grey", { "gui": "#4B4B4B", "cterm": "59", "cterm16": "15" }),
       \ "cursor_grey": get(s:overrides, "cursor_grey", { "gui": "#2C323C", "cterm": "236", "cterm16": "8" }),
-      \ "visual_grey": get(s:overrides, "visual_grey", { "gui": "#3E4452", "cterm": "237", "cterm16": "15" }),
       \ "menu_grey": get(s:overrides, "menu_grey", { "gui": "#3E4452", "cterm": "237", "cterm16": "8" }),
-      \ "special_grey": get(s:overrides, "special_grey", { "gui": "#3B4048", "cterm": "238", "cterm16": "15" }),
-      \ "vertsplit": get(s:overrides, "vertsplit", { "gui": "#181A1F", "cterm": "59", "cterm16": "15" }),
       \ "med_grey": get(s:overrides, "med_grey", { "gui": "#848484", "cterm": "102", "cterm16": "15" }),
       \ "status_grey": get(s:overrides, "status_grey", { "gui": "#444444", "cterm": "238", "cterm16": "15" }),
       \}
@@ -120,13 +117,9 @@ let s:comment_grey = s:colors.comment_grey
 let s:gutter_bg_grey = s:colors.gutter_bg_grey
 let s:gutter_fg_grey = s:colors.gutter_fg_grey
 let s:cursor_grey = s:colors.cursor_grey
-let s:visual_grey = s:colors.visual_grey
 let s:menu_grey = s:colors.menu_grey
-let s:special_grey = s:colors.special_grey
-let s:vertsplit = s:colors.vertsplit
 let s:status_grey = s:colors.status_grey
 let s:med_grey = s:colors.med_grey
-
 
 "----------------------------------------------------------------
 " General settings                                              |
@@ -145,14 +138,13 @@ call s:h("LineNr", { 'bg': s:gutter_bg_grey, 'fg': s:gutter_fg_grey })
 " - Number column -
 " -----------------
 hi CursorColumn    ctermfg=none    ctermbg=none    cterm=none
-call s:h("Folded", { "fg": s:blue })
-call s:h("FoldColumn", {})
+call s:h("Folded", { 'bg': s:gutter_bg_grey, "fg": s:blue })
+call s:h("FoldColumn", { 'bg': s:gutter_bg_grey })
 "call s:h("SignColumn", {})
 
 " -------------------------
 " - Window/Tab delimiters -
 " -------------------------
-"call s:h("VertSplit", { "fg": s:vertsplit })
 call s:h("VertSplit", { "fg": s:gutter_fg_grey })
 hi ColorColumn     ctermfg=none    ctermbg=none    cterm=none
 hi TabLine         ctermfg=none    ctermbg=none    cterm=none
@@ -163,17 +155,8 @@ hi TabLineSel      ctermfg=none    ctermbg=none    cterm=none
 " - File Navigation / Searching -
 " -------------------------------
 call s:h("Directory", { "fg": s:blue })
-hi Search          ctermfg=none    ctermbg=none    cterm=none
+call s:h('Search', { 'bg': s:yellow, 'fg': s:black })
 hi IncSearch       ctermfg=none    ctermbg=none    cterm=none
-call s:h("NERDTreeClosable", { "fg": s:blue })
-call s:h("NERDTreeOpenable", { "fg": s:menu_grey })
-call s:h("NERDTreeCWD", { "fg": s:purple })
-call s:h("NERDTreeDirSlash", { "fg": s:blue })
-call s:h("NERDTreeHelp", { "fg": s:comment_grey })
-call s:h("NERDTreeLinkDir", { "fg": s:purple })
-call s:h("NERDTreeLinkTarget", { "fg": s:white })
-call s:h("NERDTreeLinkTarget", { "fg": s:white })
-
 " -----------------
 " - Prompt/Status -
 " -----------------
@@ -191,7 +174,7 @@ call s:h("MoreMsg", { "fg": s:green })
 hi MatchParen      ctermfg=none    ctermbg=none    cterm=none
 hi Visual          ctermfg=none    ctermbg=none    cterm=none
 hi VisualNOS       ctermfg=none    ctermbg=none    cterm=none
-call s:h("NonText", { "fg": s:gutter_fg_grey })
+call s:h("NonText", { 'fg': s:gutter_fg_grey })
 call s:h("Todo", { "bg": s:yellow, "fg": s:black })
 hi Underlined      ctermfg=none    ctermbg=none    cterm=none
 call s:h("Error", { "bg": s:red, "fg": s:white })
@@ -258,8 +241,8 @@ hi DiffText        ctermfg=none    ctermbg=none    cterm=none
 " --------------------------------
 " Completion menu
 " --------------------------------
-hi Pmenu           ctermfg=none    ctermbg=none    cterm=none
-hi PmenuSel        ctermfg=none    ctermbg=none    cterm=none
+call s:h('Pmenu', { 'bg': s:gutter_bg_grey, 'fg': s:med_grey })
+call s:h('PmenuSel', { 'bg': s:blue, 'fg': s:gutter_bg_grey })
 hi PmenuSbar       ctermfg=none    ctermbg=none    cterm=none
 hi PmenuThumb      ctermfg=none    ctermbg=none    cterm=none
 
@@ -311,10 +294,19 @@ call s:h("jsSuper", { "fg": s:red })
 call s:h("jsonKeyword", { "fg": s:blue })
 call s:h("jsonString", { "fg": s:red })
 
-call s:h("GitGutterAdd", { "fg": s:green })
-call s:h("GitGutterChange", { "fg": s:yellow })
-call s:h("GitGutterDelete", { "fg": s:red })
-call s:h("GitGutterChangeDelete", { "fg": s:yellow })
+call s:h("GitGutterAdd", { 'bg': s:gutter_bg_grey, 'fg': s:green })
+call s:h("GitGutterChange", { 'bg': s:gutter_bg_grey, 'fg': s:yellow })
+call s:h("GitGutterDelete", { 'bg': s:gutter_bg_grey, 'fg': s:red })
+call s:h("GitGutterChangeDelete", { 'bg': s:gutter_bg_grey, 'fg': s:yellow })
+
+call s:h("NERDTreeClosable", { "fg": s:blue })
+call s:h("NERDTreeOpenable", { "fg": s:menu_grey })
+call s:h("NERDTreeCWD", { "fg": s:purple })
+call s:h("NERDTreeDirSlash", { "fg": s:blue })
+call s:h("NERDTreeHelp", { "fg": s:comment_grey })
+call s:h("NERDTreeLinkDir", { "fg": s:purple })
+call s:h("NERDTreeLinkTarget", { "fg": s:white })
+call s:h("NERDTreeLinkTarget", { "fg": s:white })
 
 call s:h("xmlAttrib", { "fg": s:purple })
 call s:h("xmlEndTag", { "fg": s:red })

@@ -1,5 +1,5 @@
 call plug#begin('~/.vim/plugged')
-Plug 'lifepillar/vim-solarized8'
+"Plug 'lifepillar/vim-solarized8'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
@@ -8,10 +8,27 @@ Plug 'ervandew/supertab'
 Plug 'airblade/vim-gitgutter'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
+Plug 'ssh://git.amazon.com:2222/pkg/VimIon.git'
 "Plug 'vim-scripts/SyntaxAttr.vim'
 call plug#end()
 
-" vim-solarized8
+"if &term =~ '^screen'
+    " tmux will send xterm-style keys when its xterm-keys option is on
+"    execute "set <xUp>=\e[1;*A"
+"    execute "set <xDown>=\e[1;*B"
+"    execute "set <xRight>=\e[1;*C"
+"    execute "set <xLeft>=\e[1;*D"
+"endif
+
+if exists('$TMUX')
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
+
+" colorscheme
 syntax on " enable text highlighting
 colorscheme bright_lights
 if has("termguicolors")
@@ -20,6 +37,7 @@ if has("termguicolors")
   set termguicolors
 endif
 hi Normal guibg=NONE
+
 " vimw-airline
 let g:airline_powerline_fonts = 1
 " vim-airline-themes
