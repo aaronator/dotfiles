@@ -45,7 +45,7 @@ let g:airline_theme='bright_lights'
 " nerdtree
 let NERDTreeHijackNetrw=1
 let NERDTreeShowHidden=1
-imap <C-n> :NERDTreeToggle<CR>
+map <C-n> :NERDTreeToggle<CR>
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd VimEnter * if argc() == 1 && !exists("s:std_in") && filereadable(argv()[0]) | NERDTree | wincmd p | endif
