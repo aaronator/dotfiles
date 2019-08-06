@@ -3,8 +3,8 @@
 ## <a name="usage">Usage
 
 ```sh
-$ git clone https://github.com/aaronlna/dotfiles.git ~/.dotfiles
-$ cd ~/.dotfiles
-$ ./install
+git clone https://github.com/aaronlna/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
+./install
 ```
 

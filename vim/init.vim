@@ -8,7 +8,6 @@ Plug 'ervandew/supertab'
 Plug 'airblade/vim-gitgutter'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
-Plug 'ssh://git.amazon.com:2222/pkg/VimIon.git'
 "Plug 'vim-scripts/SyntaxAttr.vim'
 call plug#end()
 
