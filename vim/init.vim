@@ -3,7 +3,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
-"Plug 'edkolev/tmuxline.vim'
+Plug 'edkolev/tmuxline.vim'
 Plug 'ervandew/supertab'
 Plug 'airblade/vim-gitgutter'
 Plug 'pangloss/vim-javascript'
