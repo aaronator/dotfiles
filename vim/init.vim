@@ -78,7 +78,6 @@ set cursorline
 set backspace=2 " backspace over everything in insert mode (indent,eol,start)
 
 set wildmenu
-set lazyredraw
 
 set autoread
 
